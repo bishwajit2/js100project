@@ -5,7 +5,7 @@
   --light-color-02: #cff2df;
   --default-color: #151d41;
   --primary-o-95: rgba(15, 191, 97, 0.95);
-  --box-shadow: 0 20px 22px 2px #7682b718;
+  --box-shadow: 0 0 30px 2px #7682b718;
 }
 
 html {
@@ -942,7 +942,7 @@ header {
 
 /*Password Generator*/
 .p-generator-inner {
-  box-shadow: var(--box-shadow);
+  border: 1px solid #ddd;
   padding: 2rem;
 }
 
@@ -955,7 +955,7 @@ header {
 
 .display-password {
   width: 100%;
-  border: 1px solid var(--primary);
+  background-color: var(--light-color-02);
   padding: 1rem;
   display: flex;
   justify-content: center;
@@ -965,6 +965,36 @@ header {
 
 .password-generate-btn {
   grid-column: span 2;
-  padding: 1rem;
+  padding: 0.8rem;
+}
+
+#characterAmountRange {
+  -webkit-appearance: none;
+  height: 30px;
+  width: 77%;
+  background: var(--light-color-02);
+}
+
+#characterAmountRange::-webkit-slider-thumb {
+  appearance: none;
+  background: var(--primary);
+  width: 15px;
+  height: 30px;
+}
+
+#characterAmountNumber {
+  border: none;
+  background: var(--light-color-02);
+  color: var(--primary);
+  font-size: 16px;
+  height: 30px;
+  float: right;
+  text-align: center;
+  margin-top: 0px;
+  width: 20%;
+}
+
+#characterAmountNumber:focus {
+  outline: none;
 }
 /*# sourceMappingURL=style.css.map */

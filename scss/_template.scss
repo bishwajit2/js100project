@@ -153,7 +153,7 @@ header {
 
 /*Password Generator*/
 .p-generator-inner {
-  box-shadow: var(--box-shadow);
+  border: 1px solid #ddd;
   padding: 2rem;
 }
 
@@ -166,7 +166,7 @@ header {
 
 .display-password {
   width: 100%;
-  border: 1px solid var(--primary);
+  background-color: var(--light-color-02);
   padding: 1rem;
   display: flex;
   justify-content: center;
@@ -176,5 +176,36 @@ header {
 
 .password-generate-btn {
   grid-column: span 2;
-  padding: 1rem;
+  padding: 0.8rem;
+}
+
+#characterAmountRange {
+  -webkit-appearance: none;
+  height: 30px;
+  width: 77%;
+  background: var(--light-color-02);
+}
+
+#characterAmountRange::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--primary);
+  width: 15px;
+  height: 30px;
+}
+
+#characterAmountNumber {
+  border: none;
+  background: var(--light-color-02);
+  color: var(--primary);
+  font-size: 16px;
+  height: 30px;
+  float: right;
+  text-align: center;
+  margin-top: 0px;
+  width: 20%;
+}
+
+#characterAmountNumber:focus {
+  outline: none;
 }

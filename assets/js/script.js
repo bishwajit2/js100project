@@ -1,5 +1,9 @@
+// ---------------------------------------------------------
+// Generate Password JavaScript
+// =========================================================
+
 (() => {
-  // All variable
+  // All variables
   const characterAmountRange = document.getElementById("characterAmountRange");
   const characterAmountNumber = document.getElementById(
     "characterAmountNumber"
@@ -10,7 +14,7 @@
   const includeSymbolsElement = document.getElementById("includeSymbols");
   const displayPassword = document.getElementById("displayPassword");
 
-  // chararcters
+  // All Chararcters variables
   const LOWER_CHAR_CODE = fromLowToHigh(97, 122);
   const UPPER_CHAR_CODE = fromLowToHigh(65, 91);
   const NUMBER_CHAR_CODE = fromLowToHigh(48, 57);
@@ -18,12 +22,14 @@
     .concat(fromLowToHigh(58, 64))
     .concat(fromLowToHigh(91, 96))
     .concat(fromLowToHigh(123, 126));
-  // Amount event
+
+  // Amount linked event
   characterAmountRange.addEventListener("input", synsAmount);
   characterAmountNumber.addEventListener("input", synsAmount);
 
   // Generate event
   form.addEventListener("submit", (e) => {
+    // Prevent submit default behaviour;
     e.preventDefault();
 
     // Generate password
@@ -77,3 +83,5 @@
     characterAmountNumber.value = value;
   }
 })();
+
+// ---------------------------------------------------------
