@@ -1,27 +1,32 @@
 (() => {
+  // All variable
   const characterAmountRange = document.getElementById("characterAmountRange");
   const characterAmountNumber = document.getElementById(
     "characterAmountNumber"
   );
-  const formBtn = document.getElementById("passwordGenerateBtn");
+  const form = document.getElementById("generatorForm");
   const includeUppercaseElement = document.getElementById("includeUppercase");
   const includeNumbersElement = document.getElementById("includeNumbers");
   const includeSymbolsElement = document.getElementById("includeSymbols");
+  const displayPassword = document.getElementById("displayPassword");
 
-  const LOWER_CHAR_CODE = arrayFromLowToHigh(97, 122);
-  const UPPERCASE_CHAR_CODE = arrayFromLowToHigh(65, 90);
-  const NUMBER_CHAR_CODE = arrayFromLowToHigh(48, 57);
-  const SYMBOL_CHAR_CODE = arrayFromLowToHigh(33, 47)
-    .concat(arrayFromLowToHigh(58, 64))
-    .concat(arrayFromLowToHigh(91, 96))
-    .concat(arrayFromLowToHigh(123, 126));
-  const passwordDisplay = document.getElementById("passwordDisplay");
+  // chararcters
+  const LOWER_CHAR_CODE = fromLowToHigh(97, 122);
+  const UPPER_CHAR_CODE = fromLowToHigh(65, 91);
+  const NUMBER_CHAR_CODE = fromLowToHigh(48, 57);
+  const SYMBOLS_CHAR_CODE = fromLowToHigh(33, 47)
+    .concat(fromLowToHigh(58, 64))
+    .concat(fromLowToHigh(91, 96))
+    .concat(fromLowToHigh(123, 126));
+  // Amount event
+  characterAmountRange.addEventListener("input", synsAmount);
+  characterAmountNumber.addEventListener("input", synsAmount);
 
-  characterAmountRange.addEventListener("input", characterAmount);
-  characterAmountNumber.addEventListener("input", characterAmount);
-
-  formBtn.addEventListener("submit", (e) => {
+  // Generate event
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
+
+    // Generate password
     const characterAmount = characterAmountNumber.value;
     const includeUppercase = includeUppercaseElement.checked;
     const includeNumbers = includeNumbersElement.checked;
@@ -32,30 +37,32 @@
       includeNumbers,
       includeSymbols
     );
-    passwordDisplay.innerText = password;
+    displayPassword.innerText = password;
   });
 
+  // Generate password function
   function generatePassword(
     characterAmount,
     includeUppercase,
     includeNumbers,
     includeSymbols
   ) {
-    const charCodes = LOWER_CHAR_CODE;
-    if (includeUppercase) charCodes = charCodes.concat(UPPERCASE_CHAR_CODE);
+    let charCodes = LOWER_CHAR_CODE;
+    if (includeUppercase) charCodes = charCodes.concat(UPPER_CHAR_CODE);
     if (includeNumbers) charCodes = charCodes.concat(NUMBER_CHAR_CODE);
-    if (includeSymbols) charCodes = charCodes.concat(SYMBOL_CHAR_CODE);
+    if (includeSymbols) charCodes = charCodes.concat(SYMBOLS_CHAR_CODE);
 
-    const passwordCharacters = [];
+    const passwordCharacter = [];
     for (let i = 0; i < characterAmount; i++) {
       const characterCode =
         charCodes[Math.floor(Math.random() * charCodes.length)];
-      passwordCharacters.push(String.fromCharCode(characterCode));
+      passwordCharacter.push(String.fromCharCode(characterCode));
     }
-    return passwordCharacters.join("");
+    return passwordCharacter.join("");
   }
 
-  function arrayFromLowToHigh(low, high) {
+  // Generate low to high number method
+  function fromLowToHigh(low, high) {
     const array = [];
     for (let i = low; i <= high; i++) {
       array.push(i);
@@ -63,7 +70,8 @@
     return array;
   }
 
-  function characterAmount(e) {
+  // Amount function
+  function synsAmount(e) {
     const value = e.target.value;
     characterAmountRange.value = value;
     characterAmountNumber.value = value;
