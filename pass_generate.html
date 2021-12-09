@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generate Password</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!-- ======= Header area start ======== -->
+    <section class="header-area">
+      <div class="humberger-menu">
+        <div class="author-image">
+          <img src="" alt="" />
+        </div>
+        <div class="author-info">
+          <div class="info-box my-email">
+            <div class="icon-box">
+              <img src="assets/image/icon/mail.png" alt="" />
+            </div>
+            <a href="mailto:bishwajit@gmail.com"> bishwajit@gmail.com </a>
+          </div>
+          <div class="info-box my-number">
+            <div class="icon-box">
+              <img src="assets/image/icon/phone-call.png" alt="" />
+            </div>
+            <a href="tel:+8801916482857">+8801916482857</a>
+          </div>
+          <div class="info-box my-address">
+            <div class="icon-box">
+              <img src="assets/image/icon/location.png" alt="" />
+            </div>
+            <p>Nayanpur, Kasba, Brahmanbaria</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ======= Header area end ======== -->
+
+    <!-- ======= Main area start ======== -->
+    <main>
+      <!-- ======= Page Title section start ======== -->
+      <section class="page-title-section title-overlay">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-6">
+              <div class="page-title-content">
+                <h1>Generate Password</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ======= Page Title section end ======== -->
+
+      <!-- ======= Project list section start ======== -->
+      <section class="project-list-section">
+        <div class="container">
+          <div class="project-container">
+            <div class="row">
+              <div class="col-xl-7 mb-30">
+                <div class="p-generator">
+                  <div class="p-generator-inner">
+                    <h3 class="display-password">Password</h3>
+                    <form id="passwordGenerateBtn" class="form">
+                      <label for="characterAmountNumber">
+                        Number of characters
+                      </label>
+                      <div>
+                        <input
+                          type="range"
+                          min="1"
+                          max="30"
+                          value="10"
+                          id="characterAmountRange"
+                        />
+                        <input
+                          type="number"
+                          min="1"
+                          max="30"
+                          value="10"
+                          id="characterAmountNumber"
+                        />
+                      </div>
+
+                      <label for="includeUppercase">Include Uppercase</label>
+                      <input type="checkbox" id="includeUppercase" />
+
+                      <label for="includeNumbers">Include Numbers</label>
+                      <input type="checkbox" id="includeNumbers" />
+
+                      <label for="includeSymbols">Include Symbols</label>
+                      <input type="checkbox" id="includeSymbols" />
+
+                      <button class="btn password-generate-btn" type="submit">
+                        Generate Password
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <!-- Project list image -->
+              <div class="col-xl-5">
+                <div class="project-image">
+                  <img src="assets/image/project/project-img.jpg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ======= Project list section end ======== -->
+    </main>
+    <!-- ======= Main area end ======== -->
+
+    <!-- ======= JavaScript here ======== -->
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
