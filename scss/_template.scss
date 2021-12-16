@@ -35,10 +35,15 @@ header {
   box-shadow: var(--box-shadow);
   padding: 0 30px;
   position: fixed;
-  left: 0;
+  left: -20%;
   top: 0;
-  overflow: auto;
-  display: none;
+  z-index: 5;
+  background-color: #fff;
+  transition: left 0.8s ease;
+
+  &.humberger-active {
+    left: 0;
+  }
 
   .humberger-menu {
     .author-image {
@@ -47,6 +52,7 @@ header {
       background-color: var(--bg);
       border: 5px solid var(--primary);
       margin: 30px auto;
+      border-radius: 50%;
     }
 
     .author-info {
@@ -55,11 +61,16 @@ header {
         background-color: var(--primary);
         margin-bottom: 30px;
         text-align: center;
+        position: relative;
+        z-index: 1;
 
         .icon-box {
-          width: 40px;
-          margin: 0 auto;
-          margin-bottom: 10px;
+          width: 55px;
+          position: absolute;
+          z-index: -1;
+          opacity: 0.2;
+          right: 22px;
+          top: 10px;
         }
 
         & a,
@@ -177,6 +188,7 @@ header {
 .password-generate-btn {
   grid-column: span 2;
   padding: 0.8rem;
+  cursor: pointer;
 }
 
 #characterAmountRange {

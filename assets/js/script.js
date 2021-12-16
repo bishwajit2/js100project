@@ -1,7 +1,3 @@
-// ---------------------------------------------------------
-// Generate Password JavaScript
-// =========================================================
-
 (() => {
   // All variables
   const characterAmountRange = document.getElementById("characterAmountRange");
