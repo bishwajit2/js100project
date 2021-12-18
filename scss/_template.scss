@@ -53,6 +53,10 @@ header {
       border: 5px solid var(--primary);
       margin: 30px auto;
       border-radius: 50%;
+
+      img {
+        border-radius: 50%;
+      }
     }
 
     .author-info {
@@ -62,7 +66,9 @@ header {
         margin-bottom: 30px;
         text-align: center;
         position: relative;
+        opacity: 0;
         z-index: 1;
+        transition: 0.3s;
 
         .icon-box {
           width: 55px;

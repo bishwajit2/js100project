@@ -853,13 +853,19 @@ header {
   border-radius: 50%;
 }
 
+.header-area .humberger-menu .author-image img {
+  border-radius: 50%;
+}
+
 .header-area .humberger-menu .author-info .info-box {
   padding: 30px;
   background-color: var(--primary);
   margin-bottom: 30px;
   text-align: center;
   position: relative;
+  opacity: 0;
   z-index: 1;
+  transition: 0.3s;
 }
 
 .header-area .humberger-menu .author-info .info-box .icon-box {
